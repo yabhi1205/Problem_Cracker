@@ -1,19 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import {auth,provider} from "./components/config";
-import {signInWithPopup} from "firebase/auth";
+import  './components/scss/style.css';
+import { Route, Routes } from 'react-router-dom';
+import Main from './components/Blogin/Main';
+
 
 function App() {
 
-  const handleClick =()=>{
-    signInWithPopup(auth,provider).then((data)=>{
-        console.log(data)
-    })
-}
 
   return (
     <div className="App">
-      <button onClick={handleClick}>Google signin</button>
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+      </Routes>
+      
     </div>
   );
 }
